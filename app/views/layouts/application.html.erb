@@ -1,14 +1,32 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>CjoeAnalytics</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-
-<%= yield %>
-
-</body>
+	<head>
+	  <title>CjoeAnalytics</title>
+	  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+	  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+	  <%= csrf_meta_tags %>
+	</head>
+	<body>
+		<!-- Navbar -->
+		<%= render 'shared/navigation' %>
+		
+		<div id="main-container" class="container-fluid">
+			<div class="row">
+		    	<div class="col-xs-12">
+		        	<% flash.each do |name, msg| -%>
+		            	<%= content_tag :div, msg, class: "alert alert-#{name}" %>
+		        	<% end -%>
+		         </div>
+		    </div>
+	    	<div class="row">
+	        	<div id="sidebar" class="col-xs-3">
+					<h3>Sidebar</h3>
+	        		<!-- sidebar content -->
+	        	</div>
+	        <div id="main-content" class="col-xs-9">
+	        	<!--  main content -->
+			  	<%= yield %>
+	        </div>
+		</div>
+	</body>
 </html>

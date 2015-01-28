@@ -25,8 +25,11 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Postgres for production
 gem 'pg'
 
-# Use Twitter Bootstrap
+# Use Twitter Bootstrap (SASS)
 gem 'bootstrap-sass', '~> 3.3.3'
+
+# Autoprefixer for CSS
+gem 'autoprefixer-rails'
 
 #Freshbooks ruby gem
 gem 'bcurren-freshbooks.rb'
@@ -55,5 +58,12 @@ group :development, :test do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+  
+  # Debugger Gems from: http://railscasts.com/episodes/402-better-errors-railspanel
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'meta_request'
+  
+  gem 'responders', '~> 2.0'
 end
 
