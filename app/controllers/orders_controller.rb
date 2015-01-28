@@ -17,6 +17,8 @@ class OrdersController < ApplicationController
     @params = params
     @order = Order.new
     
+    puts "#{params.inspect}"
+    
     respond_to do |format|
       format.html # new_from_invoice.html.erb
       format.xml  { render xml:   @order }
