@@ -14,6 +14,7 @@ class OrdersController < ApplicationController
   
   def new_from_invoice
     logger.debug params
+    @params = params
     @order = Order.new
     
     respond_to do |format|
