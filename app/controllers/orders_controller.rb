@@ -13,11 +13,11 @@ class OrdersController < ApplicationController
   end
   
   def new_from_invoice
-    logger.debug params
     @params = params
     @order = Order.new
     
-    puts "#{params.inspect}"
+    puts "hellooooo"
+    
     
     respond_to do |format|
       format.html # new_from_invoice.html.erb

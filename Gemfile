@@ -28,6 +28,12 @@ gem 'pg'
 # Use Twitter Bootstrap (SASS)
 gem 'bootstrap-sass', '~> 3.3.3'
 
+# Bourbon, Neat and refills
+gem 'bourbon'
+gem 'neat'
+gem 'refills'
+
+
 # Autoprefixer for CSS
 gem 'autoprefixer-rails'
 
@@ -36,6 +42,8 @@ gem 'bcurren-freshbooks.rb'
 
 #Devise Gem
 gem 'devise'
+
+
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
