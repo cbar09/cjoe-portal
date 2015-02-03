@@ -1,4 +1,6 @@
 class OrdersController < ApplicationController
+  skip_before_action :verify_authenticity_token
+  
   def index
     @orders = Order.all
     respond_to do |format|
