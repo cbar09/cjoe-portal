@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @fuel.name %>
+</p>
+
+<p>
+  <b>Unit reference:</b>
+  <%= @fuel.unit_reference %>
+</p>
+
+
+<%= link_to 'Edit', edit_fuel_path(@fuel) %> |
+<%= link_to 'Back', fuels_path %>

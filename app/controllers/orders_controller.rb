@@ -14,6 +14,10 @@ class OrdersController < ApplicationController
   def new
   end
   
+  def show
+    
+  end
+  
   def new_from_invoice
     @params = params
     @order = Order.new
@@ -24,10 +28,15 @@ class OrdersController < ApplicationController
   
     puts "#{@invoice.inspect}"
     
-    respond_to do |format|
-      format.html # new_from_invoice.html.erb
-      format.xml  { render xml:   @invoice }
-      format.json { render json:  @invoice }
+    @order.new(invoice_id: params[:object_id], invoice_hash: @invoice.to_json)
+    if @order.save
+      redirect_to :root
+    else
+      respond_to do |format|
+        format.html # new_from_invoice.html.erb
+        format.xml  { render xml:   @invoice }
+        format.json { render json:  @invoice }
+      end
     end
   end
 
