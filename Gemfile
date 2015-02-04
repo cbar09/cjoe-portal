@@ -43,11 +43,8 @@ gem 'bcurren-freshbooks.rb'
 #Devise Gem
 gem 'devise'
 
-#Multi XML
-gem 'multi_xml'
-
-# HTTParty
-gem 'httparty'
+# Ruby Freshbooks
+gem 'ruby-freshbooks'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

@@ -17,14 +17,17 @@ class OrdersController < ApplicationController
   def new_from_invoice
     @params = params
     @order = Order.new
+    #@invoice_id = 
     
-    puts "hellooooo"
-    
+    @fb = FreshBooks::Client.new(ENV['FRESHBOOKS_CLIENT_URL'], ENV['FRESHBOOKS_TOKEN'])
+    @invoice = @fb.invoice.get(invoice_id: params[:object_id])
+  
+    puts "#{@invoice.inspect}"
     
     respond_to do |format|
       format.html # new_from_invoice.html.erb
-      format.xml  { render xml:   @order }
-      format.json { render json:  @order }
+      format.xml  { render xml:   @invoice }
+      format.json { render json:  @invoice }
     end
   end
 
