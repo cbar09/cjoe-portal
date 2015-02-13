@@ -1,0 +1,30 @@
+<h1>Listing Shopify Product Variants</h1>
+
+<pre>
+	<%= debug Product.find_variant("BRB-5lb-WB") %>
+	<%= ShopifyAPI::Variant.all.count %>
+</pre>
+
+<table>
+	<thead>
+		<tr>
+			<th>Title</th>
+			<th>SKU</th>
+			<th>Parent Product</th>
+			<th>Price</th>
+			<th>Weight (g)</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @variants.each do |variant| %>
+			<% product = ShopifyAPI::Product.find(variant.product_id) %>
+			<tr>
+				<td><%= variant.title %></td>
+				<td><%= variant.sku %></td>
+				<td><%=  %></td>
+				<td><%= variant.price %></td>
+				<td><%= variant.grams %></td>
+			</tr>
+		<% end %>
+	</tbody>
+</table>

@@ -25,6 +25,32 @@ class OrdersController < ApplicationController
     
     @fb = FreshBooks::Client.new(ENV['FRESHBOOKS_CLIENT_URL'], ENV['FRESHBOOKS_TOKEN'])
     @invoice = @fb.invoice.get(invoice_id: params[:object_id])
+    @client = @fb.client.get(client_id: @invoice.invoice.client_id)
+    
+    # process order by lines
+    @invoice.invoice.lines.line.each do |line|
+      
+    end
+    
+    @shop = ShopifyAPI::Shop.current
+    
+    # Get a specific product
+    product = ShopifyAPI::Product.find(179761209)
+    
+    @invoice.lines.each do |line|
+      {
+        "order": {
+          
+          "line_items": [
+            {
+              "variant_id": 447654529,
+              "quantity": 1
+            }
+          ]
+        }
+      }
+      
+    end
   
     puts "#{@invoice.inspect}"
     

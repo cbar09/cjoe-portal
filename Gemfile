@@ -46,6 +46,9 @@ gem 'devise'
 # Ruby Freshbooks
 gem 'ruby-freshbooks'
 
+# Ruby Shopify API
+gem 'shopify_api'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
