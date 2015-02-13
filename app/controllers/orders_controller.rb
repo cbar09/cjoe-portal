@@ -36,19 +36,19 @@ class OrdersController < ApplicationController
     
     # Get a specific product
     product = ShopifyAPI::Product.find(179761209)
+    line_items = []
+      # "order": {
+ #          "line_items": [
+ #            {
+ #              "variant_id": 447654529,
+ #              "quantity": 1
+ #            }
+ #          ]
+ #        }
+ #      }
     
     @invoice.lines.each do |line|
-      {
-        "order": {
-          
-          "line_items": [
-            {
-              "variant_id": 447654529,
-              "quantity": 1
-            }
-          ]
-        }
-      }
+     
       
     end
   
