@@ -17,7 +17,7 @@
 	</thead>
 	<tbody>
 		<% @variants.each do |variant| %>
-			<% product = ShopifyAPI::Product.find(variant.product_id) %>
+			<%# product = ShopifyAPI::Product.find(variant.product_id) %>
 			<tr>
 				<td><%= variant.title %></td>
 				<td><%= variant.sku %></td>

@@ -48,7 +48,8 @@ class OrdersController < ApplicationController
  #      }
     
     @invoice.lines.each do |line|
-     
+      product_variant = Product.find_variant(line.name)
+      line_items.push(line.)
       
     end
   
